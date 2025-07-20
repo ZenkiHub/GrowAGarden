@@ -33,7 +33,7 @@ Instance.new("UIStroke", frame).Color = Color3.fromRGB(100, 100, 110)
 
 local title = Instance.new("TextLabel", frame)
 title.Size = UDim2.new(1, 0, 0, 35)
-title.Text = "ðŸ”¬ Pet Mutation Finder"
+title.Text = Pet Mutation Finder"
 title.TextColor3 = Color3.fromRGB(255, 255, 255)
 title.BackgroundTransparency = 1
 title.Font = Enum.Font.GothamBold
@@ -66,20 +66,20 @@ local function createButton(text, yPos, color)
 	return btn
 end
 
-local reroll = createButton("ðŸŽ² Mutation Reroll", 45, Color3.fromRGB(140, 200, 255))
-local toggle = createButton("ðŸ‘ Toggle Mutation", 90, Color3.fromRGB(180, 255, 180))
+local reroll = createButton("Mutation Reroll", 45, Color3.fromRGB(140, 200, 255))
+local toggle = createButton("Toggle Mutation", 90, Color3.fromRGB(180, 255, 180))
 
--- ðŸ· Credit label at the bottom
+-- Credit label at the bottom
 local credit = Instance.new("TextLabel", frame)
 credit.Size = UDim2.new(1, 0, 0, 20)
 credit.Position = UDim2.new(0, 0, 1, -20)
-credit.Text = "Made by Zenki"
+credit.Text = "Made by Ishida"
 credit.TextColor3 = Color3.fromRGB(200, 200, 200)
 credit.BackgroundTransparency = 1
 credit.Font = Enum.Font.Gotham
 credit.TextSize = 13
 
--- ðŸ” Find mutation machine
+-- Find mutation machine
 local function findMachine()
 	for _, obj in pairs(Workspace:GetDescendants()) do
 		if obj:IsA("Model") and obj.Name:lower():find("mutation") then
@@ -96,7 +96,7 @@ end
 
 local basePart = machine:FindFirstChildWhichIsA("BasePart")
 
--- ðŸ’¡ Stylish ESP
+-- Stylish ESP
 local espGui = Instance.new("BillboardGui", basePart)
 espGui.Name = "MutationESP"
 espGui.Adornee = basePart
@@ -113,7 +113,7 @@ espLabel.TextStrokeTransparency = 0.3
 espLabel.TextStrokeColor3 = Color3.new(0, 0, 0)
 espLabel.Text = currentMutation
 
--- ðŸŒˆ Animate rainbow color
+-- Animate rainbow color
 local hue = 0
 RunService.RenderStepped:Connect(function()
 	if espVisible then
@@ -122,9 +122,9 @@ RunService.RenderStepped:Connect(function()
 	end
 end)
 
--- â™»ï¸ Reroll effect
+-- Reroll effect
 local function animateMutationReroll()
-	reroll.Text = "â³ Rerolling..."
+	reroll.Text = "Rerolling..."
 	local duration = 2
 	local interval = 0.1
 	for i = 1, math.floor(duration / interval) do
@@ -133,7 +133,7 @@ local function animateMutationReroll()
 	end
 	currentMutation = mutations[math.random(#mutations)]
 	espLabel.Text = currentMutation
-	reroll.Text = "ðŸŽ² Mutation Reroll"
+	reroll.Text = "Mutation Reroll"
 end
 
 toggle.MouseButton1Click:Connect(function()
